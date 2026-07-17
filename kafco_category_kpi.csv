@@ -1,0 +1,11 @@
+﻿category,avg_lead_time_days,stddev_lead_time_days,safety_buffer_days,recommended_po_date,target_shutdown_date,fast_moving,medium_moving,slow_moving,total-items,pct_slow_moving
+Mechanical,193.8,45.5,76,14-Dec-26,10-Sep-27,31,44,45,120,37.5
+Civil,163.7,29.3,49,9-Feb-27,10-Sep-27,0,0,15,15,100
+Piping,139.8,30.4,51,3-Mar-27,10-Sep-27,2,11,27,40,67.5
+Instrumentation,136.5,25.3,42,15-Mar-27,10-Sep-27,11,23,16,50,32
+HVAC,112.9,25.7,43,7-Apr-27,10-Sep-27,8,5,2,15,13.3
+Electrical,109.8,24.9,42,11-Apr-27,10-Sep-27,45,25,10,80,12.5
+Chemical,86.9,21.9,37,9-May-27,10-Sep-27,7,8,5,20,25
+Utility,86,20.2,34,13-May-27,10-Sep-27,7,5,8,20,40
+Safety,63.6,17.9,30,8-Jun-27,10-Sep-27,9,9,2,20,10
+Lubrication,39.1,13.5,23,10-Jul-27,10-Sep-27,14,3,3,20,15
