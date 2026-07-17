@@ -1,0 +1,2879 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20262.26.0603.1643                               -->
+<workbook original-version='18.1' source-build='2026.2.0 (20262.26.0603.1643)' source-platform='win' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <_.fcp.DashboardRoundedCorners.true...DashboardRoundedCorners />
+    <IndividualControlFormatting />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <repository-location id='KAFCOInventoryCycleReorderAnalytics' path='/workbooks' revision='1.1' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='kafco_item_detail+' inline='true' name='federated.073emef0emwyas15nvggo0n1bbru' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='kafco_item_detail' name='textscan.04gydi811ya2ru1bz10xl1di4fmc'>
+            <connection class='textscan' directory='C:/Users/mamfa/Downloads/kaf/02_SQL/SQL_result/csv_file' filename='kafco_category_kpi.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='textscan.04gydi811ya2ru1bz10xl1di4fmc' name='kafco_category_kpi.csv' table='[kafco_category_kpi#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='category' ordinal='0' />
+              <column datatype='real' name='avg_lead_time_days' ordinal='1' />
+              <column datatype='real' name='stddev_lead_time_days' ordinal='2' />
+              <column datatype='integer' name='safety_buffer_days' ordinal='3' />
+              <column datatype='date' name='recommended_po_date' ordinal='4' />
+              <column datatype='date' name='target_shutdown_date' ordinal='5' />
+              <column datatype='integer' name='fast_moving' ordinal='6' />
+              <column datatype='integer' name='medium_moving' ordinal='7' />
+              <column datatype='integer' name='slow_moving' ordinal='8' />
+              <column datatype='integer' name='total-items' ordinal='9' />
+              <column datatype='real' name='pct_slow_moving' ordinal='10' />
+            </columns>
+          </relation>
+          <relation connection='textscan.04gydi811ya2ru1bz10xl1di4fmc' name='kafco_item_detail.csv' table='[kafco_item_detail#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='item_code' ordinal='0' />
+              <column datatype='string' name='category' ordinal='1' />
+              <column datatype='date' name='po_date' ordinal='2' />
+              <column datatype='date' name='received_date' ordinal='3' />
+              <column datatype='date' name='issue_date' ordinal='4' />
+              <column datatype='integer' name='quantity_received' ordinal='5' />
+              <column datatype='real' name='demand_rate_units_yr' ordinal='6' />
+              <column datatype='integer' name='lead_time_days' ordinal='7' />
+              <column datatype='integer' name='procurement_days' ordinal='8' />
+              <column datatype='integer' name='storage_days' ordinal='9' />
+              <column datatype='integer' name='total_cycle_days' ordinal='10' />
+              <column datatype='real' name='days_of_supply' ordinal='11' />
+              <column datatype='real' name='turnover_rate_per_year' ordinal='12' />
+              <column datatype='string' name='velocity_class' ordinal='13' />
+              <column datatype='string' name='F15' ordinal='14' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[F15]' value='[kafco_item_detail.csv].[F15]' />
+          <map key='[avg_lead_time_days]' value='[kafco_category_kpi.csv].[avg_lead_time_days]' />
+          <map key='[category (kafco_category_kpi.csv)]' value='[kafco_category_kpi.csv].[category]' />
+          <map key='[category]' value='[kafco_item_detail.csv].[category]' />
+          <map key='[days_of_supply]' value='[kafco_item_detail.csv].[days_of_supply]' />
+          <map key='[demand_rate_units_yr]' value='[kafco_item_detail.csv].[demand_rate_units_yr]' />
+          <map key='[fast_moving]' value='[kafco_category_kpi.csv].[fast_moving]' />
+          <map key='[issue_date]' value='[kafco_item_detail.csv].[issue_date]' />
+          <map key='[item_code]' value='[kafco_item_detail.csv].[item_code]' />
+          <map key='[lead_time_days]' value='[kafco_item_detail.csv].[lead_time_days]' />
+          <map key='[medium_moving]' value='[kafco_category_kpi.csv].[medium_moving]' />
+          <map key='[pct_slow_moving]' value='[kafco_category_kpi.csv].[pct_slow_moving]' />
+          <map key='[po_date]' value='[kafco_item_detail.csv].[po_date]' />
+          <map key='[procurement_days]' value='[kafco_item_detail.csv].[procurement_days]' />
+          <map key='[quantity_received]' value='[kafco_item_detail.csv].[quantity_received]' />
+          <map key='[received_date]' value='[kafco_item_detail.csv].[received_date]' />
+          <map key='[recommended_po_date]' value='[kafco_category_kpi.csv].[recommended_po_date]' />
+          <map key='[safety_buffer_days]' value='[kafco_category_kpi.csv].[safety_buffer_days]' />
+          <map key='[slow_moving]' value='[kafco_category_kpi.csv].[slow_moving]' />
+          <map key='[stddev_lead_time_days]' value='[kafco_category_kpi.csv].[stddev_lead_time_days]' />
+          <map key='[storage_days]' value='[kafco_item_detail.csv].[storage_days]' />
+          <map key='[target_shutdown_date]' value='[kafco_category_kpi.csv].[target_shutdown_date]' />
+          <map key='[total-items]' value='[kafco_category_kpi.csv].[total-items]' />
+          <map key='[total_cycle_days]' value='[kafco_item_detail.csv].[total_cycle_days]' />
+          <map key='[turnover_rate_per_year]' value='[kafco_item_detail.csv].[turnover_rate_per_year]' />
+          <map key='[velocity_class]' value='[kafco_item_detail.csv].[velocity_class]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[kafco_category_kpi.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[kafco_item_detail.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>category</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[category (kafco_category_kpi.csv)]</local-name>
+            <parent-name>[kafco_category_kpi.csv]</parent-name>
+            <remote-alias>category</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>avg_lead_time_days</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[avg_lead_time_days]</local-name>
+            <parent-name>[kafco_category_kpi.csv]</parent-name>
+            <remote-alias>avg_lead_time_days</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>stddev_lead_time_days</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[stddev_lead_time_days]</local-name>
+            <parent-name>[kafco_category_kpi.csv]</parent-name>
+            <remote-alias>stddev_lead_time_days</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>safety_buffer_days</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[safety_buffer_days]</local-name>
+            <parent-name>[kafco_category_kpi.csv]</parent-name>
+            <remote-alias>safety_buffer_days</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>recommended_po_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[recommended_po_date]</local-name>
+            <parent-name>[kafco_category_kpi.csv]</parent-name>
+            <remote-alias>recommended_po_date</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>target_shutdown_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[target_shutdown_date]</local-name>
+            <parent-name>[kafco_category_kpi.csv]</parent-name>
+            <remote-alias>target_shutdown_date</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>fast_moving</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[fast_moving]</local-name>
+            <parent-name>[kafco_category_kpi.csv]</parent-name>
+            <remote-alias>fast_moving</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>medium_moving</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[medium_moving]</local-name>
+            <parent-name>[kafco_category_kpi.csv]</parent-name>
+            <remote-alias>medium_moving</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>slow_moving</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[slow_moving]</local-name>
+            <parent-name>[kafco_category_kpi.csv]</parent-name>
+            <remote-alias>slow_moving</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total-items</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[total-items]</local-name>
+            <parent-name>[kafco_category_kpi.csv]</parent-name>
+            <remote-alias>total-items</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pct_slow_moving</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[pct_slow_moving]</local-name>
+            <parent-name>[kafco_category_kpi.csv]</parent-name>
+            <remote-alias>pct_slow_moving</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>item_code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[item_code]</local-name>
+            <parent-name>[kafco_item_detail.csv]</parent-name>
+            <remote-alias>item_code</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>category</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[category]</local-name>
+            <parent-name>[kafco_item_detail.csv]</parent-name>
+            <remote-alias>category</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>po_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[po_date]</local-name>
+            <parent-name>[kafco_item_detail.csv]</parent-name>
+            <remote-alias>po_date</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>received_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[received_date]</local-name>
+            <parent-name>[kafco_item_detail.csv]</parent-name>
+            <remote-alias>received_date</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>issue_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[issue_date]</local-name>
+            <parent-name>[kafco_item_detail.csv]</parent-name>
+            <remote-alias>issue_date</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>quantity_received</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[quantity_received]</local-name>
+            <parent-name>[kafco_item_detail.csv]</parent-name>
+            <remote-alias>quantity_received</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>demand_rate_units_yr</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[demand_rate_units_yr]</local-name>
+            <parent-name>[kafco_item_detail.csv]</parent-name>
+            <remote-alias>demand_rate_units_yr</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>lead_time_days</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[lead_time_days]</local-name>
+            <parent-name>[kafco_item_detail.csv]</parent-name>
+            <remote-alias>lead_time_days</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>procurement_days</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[procurement_days]</local-name>
+            <parent-name>[kafco_item_detail.csv]</parent-name>
+            <remote-alias>procurement_days</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>storage_days</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[storage_days]</local-name>
+            <parent-name>[kafco_item_detail.csv]</parent-name>
+            <remote-alias>storage_days</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_cycle_days</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[total_cycle_days]</local-name>
+            <parent-name>[kafco_item_detail.csv]</parent-name>
+            <remote-alias>total_cycle_days</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>days_of_supply</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[days_of_supply]</local-name>
+            <parent-name>[kafco_item_detail.csv]</parent-name>
+            <remote-alias>days_of_supply</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>turnover_rate_per_year</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[turnover_rate_per_year]</local-name>
+            <parent-name>[kafco_item_detail.csv]</parent-name>
+            <remote-alias>turnover_rate_per_year</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>velocity_class</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[velocity_class]</local-name>
+            <parent-name>[kafco_item_detail.csv]</parent-name>
+            <remote-alias>velocity_class</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F15</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[F15]</local-name>
+            <parent-name>[kafco_item_detail.csv]</parent-name>
+            <remote-alias>F15</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='kafco_category_kpi.csv' datatype='table' name='[__tableau_internal_object_id__].[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]' role='measure' type='quantitative' />
+      <column caption='kafco_item_detail.csv' datatype='table' name='[__tableau_internal_object_id__].[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]' role='measure' type='quantitative' />
+      <column caption='Avg Lead Time Days' datatype='real' name='[avg_lead_time_days]' role='measure' type='quantitative' />
+      <column caption='Category (Kafco Category Kpi.Csv)' datatype='string' name='[category (kafco_category_kpi.csv)]' role='dimension' type='nominal' />
+      <column caption='Category' datatype='string' name='[category]' role='dimension' type='nominal' />
+      <column caption='Days of Supply' datatype='real' name='[days_of_supply]' role='measure' type='quantitative' />
+      <column caption='Demand Rate (Units/Year)' datatype='real' name='[demand_rate_units_yr]' role='dimension' type='quantitative' />
+      <column caption='Fast Moving' datatype='integer' name='[fast_moving]' role='measure' type='quantitative' />
+      <column caption='Issue Date' datatype='date' name='[issue_date]' role='dimension' type='ordinal' />
+      <column caption='Item Code' datatype='string' name='[item_code]' role='dimension' type='nominal' />
+      <column caption='Lead Time (Days)' datatype='integer' name='[lead_time_days]' role='measure' type='quantitative' />
+      <column caption='Medium Moving' datatype='integer' name='[medium_moving]' role='measure' type='quantitative' />
+      <column caption='% Slow-Moving Items' datatype='real' name='[pct_slow_moving]' role='measure' type='quantitative' />
+      <column caption='Po Date' datatype='date' name='[po_date]' role='dimension' type='ordinal' />
+      <column caption='Procurement Days' datatype='integer' name='[procurement_days]' role='measure' type='quantitative' />
+      <column caption='Quantity Received' datatype='integer' name='[quantity_received]' role='measure' type='quantitative' />
+      <column caption='Received Date' datatype='date' name='[received_date]' role='dimension' type='ordinal' />
+      <column caption='Recommended PO Date' datatype='date' name='[recommended_po_date]' role='dimension' type='ordinal' />
+      <column caption='Safety Buffer Days' datatype='integer' name='[safety_buffer_days]' role='measure' type='quantitative' />
+      <column caption='Slow Moving' datatype='integer' name='[slow_moving]' role='measure' type='quantitative' />
+      <column caption='Stddev Lead Time Days' datatype='real' name='[stddev_lead_time_days]' role='measure' type='quantitative' />
+      <column caption='Storage Days' datatype='integer' name='[storage_days]' role='measure' type='quantitative' />
+      <column caption='Target Shutdown Date' datatype='date' name='[target_shutdown_date]' role='dimension' type='ordinal' />
+      <column caption='Total Cycle Days' datatype='integer' name='[total_cycle_days]' role='measure' type='quantitative' />
+      <column caption='Turnover Rate (per Year)' datatype='real' name='[turnover_rate_per_year]' role='dimension' type='quantitative' />
+      <column caption='Velocity Class' datatype='string' name='[velocity_class]' role='dimension' type='nominal' />
+      <column-instance column='[velocity_class]' derivation='Attribute' name='[attr:velocity_class:nk]' pivot='key' type='nominal' />
+      <column-instance column='[category (kafco_category_kpi.csv)]' derivation='None' name='[none:category (kafco_category_kpi.csv):nk]' pivot='key' type='nominal' />
+      <column-instance column='[category]' derivation='None' name='[none:category:nk]' pivot='key' type='nominal' />
+      <group caption='Action (Category (Kafco Category Kpi.Csv),Category)' hidden='true' name='[Action (Category (Kafco Category Kpi.Csv),Category)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[category (kafco_category_kpi.csv)]' />
+          <groupfilter function='level-members' level='[category]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Category)' hidden='true' name='[Action (Category)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[category]' />
+        </groupfilter>
+      </group>
+      <extract count='-1' enabled='true' object-id='' units='records' user-specific='false'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/mamfa/AppData/Local/Temp/TableauTemp/#TableauTemp_0g087eb14avei91duze3u1ozsqe9.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='07/14/2026 11:49:51 PM' username='tableau_internal_user'>
+          <relation type='collection'>
+            <relation name='kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B' table='[Extract].[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]' type='table' />
+            <relation name='kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46' table='[Extract].[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]' type='table' />
+          </relation>
+          <cols>
+            <map key='[F15]' value='[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46].[F15]' />
+            <map key='[avg_lead_time_days]' value='[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B].[avg_lead_time_days]' />
+            <map key='[category (kafco_category_kpi.csv)]' value='[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B].[category]' />
+            <map key='[category]' value='[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46].[category]' />
+            <map key='[days_of_supply]' value='[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46].[days_of_supply]' />
+            <map key='[demand_rate_units_yr]' value='[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46].[demand_rate_units_yr]' />
+            <map key='[fast_moving]' value='[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B].[fast_moving]' />
+            <map key='[issue_date]' value='[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46].[issue_date]' />
+            <map key='[item_code]' value='[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46].[item_code]' />
+            <map key='[lead_time_days]' value='[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46].[lead_time_days]' />
+            <map key='[medium_moving]' value='[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B].[medium_moving]' />
+            <map key='[pct_slow_moving]' value='[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B].[pct_slow_moving]' />
+            <map key='[po_date]' value='[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46].[po_date]' />
+            <map key='[procurement_days]' value='[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46].[procurement_days]' />
+            <map key='[quantity_received]' value='[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46].[quantity_received]' />
+            <map key='[received_date]' value='[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46].[received_date]' />
+            <map key='[recommended_po_date]' value='[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B].[recommended_po_date]' />
+            <map key='[safety_buffer_days]' value='[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B].[safety_buffer_days]' />
+            <map key='[slow_moving]' value='[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B].[slow_moving]' />
+            <map key='[stddev_lead_time_days]' value='[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B].[stddev_lead_time_days]' />
+            <map key='[storage_days]' value='[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46].[storage_days]' />
+            <map key='[target_shutdown_date]' value='[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B].[target_shutdown_date]' />
+            <map key='[total-items]' value='[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B].[total-items]' />
+            <map key='[total_cycle_days]' value='[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46].[total_cycle_days]' />
+            <map key='[turnover_rate_per_year]' value='[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46].[turnover_rate_per_year]' />
+            <map key='[velocity_class]' value='[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46].[velocity_class]' />
+          </cols>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>category</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[category (kafco_category_kpi.csv)]</local-name>
+              <parent-name>[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]</parent-name>
+              <remote-alias>category</remote-alias>
+              <ordinal>0</ordinal>
+              <family>kafco_category_kpi.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>avg_lead_time_days</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[avg_lead_time_days]</local-name>
+              <parent-name>[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]</parent-name>
+              <remote-alias>avg_lead_time_days</remote-alias>
+              <ordinal>1</ordinal>
+              <family>kafco_category_kpi.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>stddev_lead_time_days</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[stddev_lead_time_days]</local-name>
+              <parent-name>[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]</parent-name>
+              <remote-alias>stddev_lead_time_days</remote-alias>
+              <ordinal>2</ordinal>
+              <family>kafco_category_kpi.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>safety_buffer_days</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[safety_buffer_days]</local-name>
+              <parent-name>[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]</parent-name>
+              <remote-alias>safety_buffer_days</remote-alias>
+              <ordinal>3</ordinal>
+              <family>kafco_category_kpi.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>recommended_po_date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[recommended_po_date]</local-name>
+              <parent-name>[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]</parent-name>
+              <remote-alias>recommended_po_date</remote-alias>
+              <ordinal>4</ordinal>
+              <family>kafco_category_kpi.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>target_shutdown_date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[target_shutdown_date]</local-name>
+              <parent-name>[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]</parent-name>
+              <remote-alias>target_shutdown_date</remote-alias>
+              <ordinal>5</ordinal>
+              <family>kafco_category_kpi.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>fast_moving</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[fast_moving]</local-name>
+              <parent-name>[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]</parent-name>
+              <remote-alias>fast_moving</remote-alias>
+              <ordinal>6</ordinal>
+              <family>kafco_category_kpi.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>medium_moving</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[medium_moving]</local-name>
+              <parent-name>[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]</parent-name>
+              <remote-alias>medium_moving</remote-alias>
+              <ordinal>7</ordinal>
+              <family>kafco_category_kpi.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>slow_moving</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[slow_moving]</local-name>
+              <parent-name>[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]</parent-name>
+              <remote-alias>slow_moving</remote-alias>
+              <ordinal>8</ordinal>
+              <family>kafco_category_kpi.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total-items</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[total-items]</local-name>
+              <parent-name>[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]</parent-name>
+              <remote-alias>total-items</remote-alias>
+              <ordinal>9</ordinal>
+              <family>kafco_category_kpi.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>pct_slow_moving</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[pct_slow_moving]</local-name>
+              <parent-name>[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]</parent-name>
+              <remote-alias>pct_slow_moving</remote-alias>
+              <ordinal>10</ordinal>
+              <family>kafco_category_kpi.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>item_code</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[item_code]</local-name>
+              <parent-name>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</parent-name>
+              <remote-alias>item_code</remote-alias>
+              <ordinal>11</ordinal>
+              <family>kafco_item_detail.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>400</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>category</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[category]</local-name>
+              <parent-name>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</parent-name>
+              <remote-alias>category</remote-alias>
+              <ordinal>12</ordinal>
+              <family>kafco_item_detail.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>10</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>po_date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[po_date]</local-name>
+              <parent-name>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</parent-name>
+              <remote-alias>po_date</remote-alias>
+              <ordinal>13</ordinal>
+              <family>kafco_item_detail.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>384</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>received_date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[received_date]</local-name>
+              <parent-name>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</parent-name>
+              <remote-alias>received_date</remote-alias>
+              <ordinal>14</ordinal>
+              <family>kafco_item_detail.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>381</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>issue_date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[issue_date]</local-name>
+              <parent-name>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</parent-name>
+              <remote-alias>issue_date</remote-alias>
+              <ordinal>15</ordinal>
+              <family>kafco_item_detail.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>251</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>quantity_received</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[quantity_received]</local-name>
+              <parent-name>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</parent-name>
+              <remote-alias>quantity_received</remote-alias>
+              <ordinal>16</ordinal>
+              <family>kafco_item_detail.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>124</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>demand_rate_units_yr</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[demand_rate_units_yr]</local-name>
+              <parent-name>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</parent-name>
+              <remote-alias>demand_rate_units_yr</remote-alias>
+              <ordinal>17</ordinal>
+              <family>kafco_item_detail.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>170</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>lead_time_days</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[lead_time_days]</local-name>
+              <parent-name>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</parent-name>
+              <remote-alias>lead_time_days</remote-alias>
+              <ordinal>18</ordinal>
+              <family>kafco_item_detail.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>182</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>procurement_days</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[procurement_days]</local-name>
+              <parent-name>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</parent-name>
+              <remote-alias>procurement_days</remote-alias>
+              <ordinal>19</ordinal>
+              <family>kafco_item_detail.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>182</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>storage_days</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[storage_days]</local-name>
+              <parent-name>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</parent-name>
+              <remote-alias>storage_days</remote-alias>
+              <ordinal>20</ordinal>
+              <family>kafco_item_detail.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>249</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_cycle_days</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[total_cycle_days]</local-name>
+              <parent-name>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</parent-name>
+              <remote-alias>total_cycle_days</remote-alias>
+              <ordinal>21</ordinal>
+              <family>kafco_item_detail.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>305</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>days_of_supply</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[days_of_supply]</local-name>
+              <parent-name>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</parent-name>
+              <remote-alias>days_of_supply</remote-alias>
+              <ordinal>22</ordinal>
+              <family>kafco_item_detail.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>254</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>turnover_rate_per_year</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[turnover_rate_per_year]</local-name>
+              <parent-name>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</parent-name>
+              <remote-alias>turnover_rate_per_year</remote-alias>
+              <ordinal>23</ordinal>
+              <family>kafco_item_detail.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>222</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>velocity_class</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[velocity_class]</local-name>
+              <parent-name>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</parent-name>
+              <remote-alias>velocity_class</remote-alias>
+              <ordinal>24</ordinal>
+              <family>kafco_item_detail.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>F15</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[F15]</local-name>
+              <parent-name>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</parent-name>
+              <remote-alias>F15</remote-alias>
+              <ordinal>25</ordinal>
+              <family>kafco_item_detail.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:category (kafco_category_kpi.csv):nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Chemical&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Instrumentation&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;HVAC&quot;</bucket>
+            </map>
+            <map to='#9c755f'>
+              <bucket>&quot;Safety&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Mechanical&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Utility&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Electrical&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;Lubrication&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Civil&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;Piping&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[attr:velocity_class:nk]' type='palette'>
+            <map to='#59a14f'>
+              <bucket>&quot;Fast-Moving&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Slow-Moving&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Medium-Moving&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:category:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Chemical&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Instrumentation&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;HVAC&quot;</bucket>
+            </map>
+            <map to='#9c755f'>
+              <bucket>&quot;Safety&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Mechanical&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Utility&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Electrical&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;Lubrication&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Civil&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;Piping&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Bangladesh&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='kafco_category_kpi.csv' id='kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B'>
+            <properties context=''>
+              <relation connection='textscan.04gydi811ya2ru1bz10xl1di4fmc' name='kafco_category_kpi.csv' table='[kafco_category_kpi#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='category' ordinal='0' />
+                  <column datatype='real' name='avg_lead_time_days' ordinal='1' />
+                  <column datatype='real' name='stddev_lead_time_days' ordinal='2' />
+                  <column datatype='integer' name='safety_buffer_days' ordinal='3' />
+                  <column datatype='date' name='recommended_po_date' ordinal='4' />
+                  <column datatype='date' name='target_shutdown_date' ordinal='5' />
+                  <column datatype='integer' name='fast_moving' ordinal='6' />
+                  <column datatype='integer' name='medium_moving' ordinal='7' />
+                  <column datatype='integer' name='slow_moving' ordinal='8' />
+                  <column datatype='integer' name='total-items' ordinal='9' />
+                  <column datatype='real' name='pct_slow_moving' ordinal='10' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B' table='[Extract].[kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B]' type='table' />
+            </properties>
+          </object>
+          <object caption='kafco_item_detail.csv' id='kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46'>
+            <properties context=''>
+              <relation connection='textscan.04gydi811ya2ru1bz10xl1di4fmc' name='kafco_item_detail.csv' table='[kafco_item_detail#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='item_code' ordinal='0' />
+                  <column datatype='string' name='category' ordinal='1' />
+                  <column datatype='date' name='po_date' ordinal='2' />
+                  <column datatype='date' name='received_date' ordinal='3' />
+                  <column datatype='date' name='issue_date' ordinal='4' />
+                  <column datatype='integer' name='quantity_received' ordinal='5' />
+                  <column datatype='real' name='demand_rate_units_yr' ordinal='6' />
+                  <column datatype='integer' name='lead_time_days' ordinal='7' />
+                  <column datatype='integer' name='procurement_days' ordinal='8' />
+                  <column datatype='integer' name='storage_days' ordinal='9' />
+                  <column datatype='integer' name='total_cycle_days' ordinal='10' />
+                  <column datatype='real' name='days_of_supply' ordinal='11' />
+                  <column datatype='real' name='turnover_rate_per_year' ordinal='12' />
+                  <column datatype='string' name='velocity_class' ordinal='13' />
+                  <column datatype='string' name='F15' ordinal='14' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46' table='[Extract].[kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[category (kafco_category_kpi.csv)]' />
+              <expression op='[category]' />
+            </expression>
+            <first-end-point object-id='kafco_category_kpi.csv_4F9EB0FE75E748729B5EF540D49DF55B' />
+            <second-end-point object-id='kafco_item_detail.csv_8AD43D23F9E8431C8B7D48B75F7DAA46' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <actions>
+    <action caption='Filter1' name='[Action1_E67D2A80AAD94B47AEA025F455AA1A18]'>
+      <activation type='on-select' />
+      <source dashboard='KAFCO Inventory Dashboard' type='sheet' worksheet='Turnover by Category' />
+      <command command='tsc:tsl-filter'>
+        <param name='exclude' value='Turnover by Category' />
+        <param name='special-fields' value='all' />
+        <param name='target' value='KAFCO Inventory Dashboard' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='Reorder Timeline'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='kafco_item_detail+' name='federated.073emef0emwyas15nvggo0n1bbru' />
+          </datasources>
+          <datasource-dependencies datasource='federated.073emef0emwyas15nvggo0n1bbru'>
+            <column caption='Avg Lead Time Days' datatype='real' name='[avg_lead_time_days]' role='measure' type='quantitative' />
+            <column caption='Category (Kafco Category Kpi.Csv)' datatype='string' name='[category (kafco_category_kpi.csv)]' role='dimension' type='nominal' />
+            <column caption='Category' datatype='string' name='[category]' role='dimension' type='nominal' />
+            <column-instance column='[category (kafco_category_kpi.csv)]' derivation='None' name='[none:category (kafco_category_kpi.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[category]' derivation='None' name='[none:category:nk]' pivot='key' type='nominal' />
+            <column-instance column='[recommended_po_date]' derivation='None' name='[none:recommended_po_date:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[target_shutdown_date]' derivation='None' name='[none:target_shutdown_date:qk]' pivot='key' type='quantitative' />
+            <column caption='Recommended PO Date' datatype='date' name='[recommended_po_date]' role='dimension' type='ordinal' />
+            <column caption='Stddev Lead Time Days' datatype='real' name='[stddev_lead_time_days]' role='measure' type='quantitative' />
+            <column-instance column='[avg_lead_time_days]' derivation='Sum' name='[sum:avg_lead_time_days:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[stddev_lead_time_days]' derivation='Sum' name='[sum:stddev_lead_time_days:qk]' pivot='key' type='quantitative' />
+            <column caption='Target Shutdown Date' datatype='date' name='[target_shutdown_date]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.073emef0emwyas15nvggo0n1bbru].[Action (Category (Kafco Category Kpi.Csv),Category)]'>
+            <groupfilter function='union' user:ui-action-filter='[Action1_E67D2A80AAD94B47AEA025F455AA1A18]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='member' level='[category (kafco_category_kpi.csv)]' member='&quot;Chemical&quot;' />
+                <groupfilter function='member' level='[category]' member='&quot;Chemical&quot;' />
+              </groupfilter>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='member' level='[category (kafco_category_kpi.csv)]' member='&quot;Civil&quot;' />
+                <groupfilter function='member' level='[category]' member='&quot;Civil&quot;' />
+              </groupfilter>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='member' level='[category (kafco_category_kpi.csv)]' member='&quot;Electrical&quot;' />
+                <groupfilter function='member' level='[category]' member='&quot;Electrical&quot;' />
+              </groupfilter>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='member' level='[category (kafco_category_kpi.csv)]' member='&quot;HVAC&quot;' />
+                <groupfilter function='member' level='[category]' member='&quot;HVAC&quot;' />
+              </groupfilter>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='member' level='[category (kafco_category_kpi.csv)]' member='&quot;Lubrication&quot;' />
+                <groupfilter function='member' level='[category]' member='&quot;Lubrication&quot;' />
+              </groupfilter>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='member' level='[category (kafco_category_kpi.csv)]' member='&quot;Mechanical&quot;' />
+                <groupfilter function='member' level='[category]' member='&quot;Mechanical&quot;' />
+              </groupfilter>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='member' level='[category (kafco_category_kpi.csv)]' member='&quot;Piping&quot;' />
+                <groupfilter function='member' level='[category]' member='&quot;Piping&quot;' />
+              </groupfilter>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='member' level='[category (kafco_category_kpi.csv)]' member='&quot;Safety&quot;' />
+                <groupfilter function='member' level='[category]' member='&quot;Safety&quot;' />
+              </groupfilter>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='member' level='[category (kafco_category_kpi.csv)]' member='&quot;Utility&quot;' />
+                <groupfilter function='member' level='[category]' member='&quot;Utility&quot;' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.073emef0emwyas15nvggo0n1bbru].[Action (Category)]'>
+            <groupfilter function='level-members' level='[category]' user:ui-action-filter='[Action1_E67D2A80AAD94B47AEA025F455AA1A18]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.073emef0emwyas15nvggo0n1bbru].[none:category:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.073emef0emwyas15nvggo0n1bbru].[sum:avg_lead_time_days:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.073emef0emwyas15nvggo0n1bbru].[Action (Category)]</column>
+            <column>[federated.073emef0emwyas15nvggo0n1bbru].[Action (Category (Kafco Category Kpi.Csv),Category)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='refline'>
+            <format attr='fill-above' id='refline1' value='#00000000' />
+            <format attr='fill-below' id='refline1' value='#00000000' />
+            <format attr='fill-above' id='refline0' value='#00000000' />
+            <format attr='fill-below' id='refline0' value='#00000000' />
+            <format attr='line-visibility' value='on' />
+            <format attr='line-pattern-only' value='dashed' />
+          </style-rule>
+          <style-rule element='refband'>
+            <format attr='palette' value='rf_stoplight_lt' />
+          </style-rule>
+          <style-rule element='refboxplot'>
+            <format attr='palette' value='bp_gray60' />
+            <format attr='opacity' value='167' />
+          </style-rule>
+          <style-rule element='title'>
+            <format attr='background-color' value='#f2f9f9' />
+          </style-rule>
+          <style-rule element='legend'>
+            <format attr='color' field='[federated.073emef0emwyas15nvggo0n1bbru].[none:category (kafco_category_kpi.csv):nk]' id='legend-color' value='#000000' />
+            <format attr='color' value='#000000' />
+          </style-rule>
+          <style-rule element='legend-title'>
+            <format attr='color' field='[federated.073emef0emwyas15nvggo0n1bbru].[none:category (kafco_category_kpi.csv):nk]' id='legend-color' value='#000000' />
+            <format attr='font-weight' field='[federated.073emef0emwyas15nvggo0n1bbru].[none:category (kafco_category_kpi.csv):nk]' id='legend-color' value='bold' />
+            <format attr='color' value='#000000' />
+            <format attr='font-weight' value='bold' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='GanttBar' />
+            <encodings>
+              <color column='[federated.073emef0emwyas15nvggo0n1bbru].[none:category (kafco_category_kpi.csv):nk]' />
+              <size column='[federated.073emef0emwyas15nvggo0n1bbru].[sum:avg_lead_time_days:qk]' />
+              <lod column='[federated.073emef0emwyas15nvggo0n1bbru].[sum:stddev_lead_time_days:qk]' />
+              <lod column='[federated.073emef0emwyas15nvggo0n1bbru].[none:target_shutdown_date:qk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#757575'>Category (Kafco Category Kpi.Csv):	</run>
+                <run bold='true'><![CDATA[<[federated.073emef0emwyas15nvggo0n1bbru].[none:category (kafco_category_kpi.csv):nk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Category:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.073emef0emwyas15nvggo0n1bbru].[none:category:nk]>]]></run>
+                <run fontcolor='#000000' fontname='Benton Sans Book'>must be ordered by</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Recommended PO Date:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.073emef0emwyas15nvggo0n1bbru].[none:recommended_po_date:qk]>]]></run>
+                <run fontcolor='#000000' fontname='Benton Sans Book'>— that&apos;s</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Target Shutdown Date:&#9;</run>
+                <run fontcolor='#000000' fontname='Benton Sans Book'>days before the</run>
+                <run fontcolor='#000000' fontname='Benton Sans Book'>shutdown</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Avg Lead Time Days:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.073emef0emwyas15nvggo0n1bbru].[sum:avg_lead_time_days:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Stddev Lead Time Days:&#9;</run>
+                <run bold='true'><![CDATA[<[federated.073emef0emwyas15nvggo0n1bbru].[sum:stddev_lead_time_days:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-mode' value='selection' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.073emef0emwyas15nvggo0n1bbru].[none:category:nk]</rows>
+        <cols>[federated.073emef0emwyas15nvggo0n1bbru].[none:recommended_po_date:qk]</cols>
+      </table>
+      <simple-id uuid='{CCE4C5B0-5FD8-4E55-B278-FE5E7C690E09}' />
+    </worksheet>
+    <worksheet name='Slow Moving Risk'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='kafco_item_detail+' name='federated.073emef0emwyas15nvggo0n1bbru' />
+          </datasources>
+          <datasource-dependencies datasource='federated.073emef0emwyas15nvggo0n1bbru'>
+            <column caption='Category (Kafco Category Kpi.Csv)' datatype='string' name='[category (kafco_category_kpi.csv)]' role='dimension' type='nominal' />
+            <column caption='Category' datatype='string' name='[category]' role='dimension' type='nominal' />
+            <column-instance column='[category (kafco_category_kpi.csv)]' derivation='None' name='[none:category (kafco_category_kpi.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[category]' derivation='None' name='[none:category:nk]' pivot='key' type='nominal' />
+            <column caption='% Slow-Moving Items' datatype='real' name='[pct_slow_moving]' role='measure' type='quantitative' />
+            <column-instance column='[pct_slow_moving]' derivation='Sum' name='[sum:pct_slow_moving:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.073emef0emwyas15nvggo0n1bbru].[Action (Category (Kafco Category Kpi.Csv),Category)]'>
+            <groupfilter function='union' user:ui-action-filter='[Action1_E67D2A80AAD94B47AEA025F455AA1A18]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='member' level='[category (kafco_category_kpi.csv)]' member='&quot;Chemical&quot;' />
+                <groupfilter function='member' level='[category]' member='&quot;Chemical&quot;' />
+              </groupfilter>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='member' level='[category (kafco_category_kpi.csv)]' member='&quot;Civil&quot;' />
+                <groupfilter function='member' level='[category]' member='&quot;Civil&quot;' />
+              </groupfilter>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='member' level='[category (kafco_category_kpi.csv)]' member='&quot;Electrical&quot;' />
+                <groupfilter function='member' level='[category]' member='&quot;Electrical&quot;' />
+              </groupfilter>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='member' level='[category (kafco_category_kpi.csv)]' member='&quot;HVAC&quot;' />
+                <groupfilter function='member' level='[category]' member='&quot;HVAC&quot;' />
+              </groupfilter>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='member' level='[category (kafco_category_kpi.csv)]' member='&quot;Lubrication&quot;' />
+                <groupfilter function='member' level='[category]' member='&quot;Lubrication&quot;' />
+              </groupfilter>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='member' level='[category (kafco_category_kpi.csv)]' member='&quot;Mechanical&quot;' />
+                <groupfilter function='member' level='[category]' member='&quot;Mechanical&quot;' />
+              </groupfilter>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='member' level='[category (kafco_category_kpi.csv)]' member='&quot;Piping&quot;' />
+                <groupfilter function='member' level='[category]' member='&quot;Piping&quot;' />
+              </groupfilter>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='member' level='[category (kafco_category_kpi.csv)]' member='&quot;Safety&quot;' />
+                <groupfilter function='member' level='[category]' member='&quot;Safety&quot;' />
+              </groupfilter>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='member' level='[category (kafco_category_kpi.csv)]' member='&quot;Utility&quot;' />
+                <groupfilter function='member' level='[category]' member='&quot;Utility&quot;' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.073emef0emwyas15nvggo0n1bbru].[Action (Category)]'>
+            <groupfilter function='level-members' level='[category]' user:ui-action-filter='[Action1_E67D2A80AAD94B47AEA025F455AA1A18]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.073emef0emwyas15nvggo0n1bbru].[none:category (kafco_category_kpi.csv):nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.073emef0emwyas15nvggo0n1bbru].[sum:pct_slow_moving:qk]' shelf='columns' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.073emef0emwyas15nvggo0n1bbru].[Action (Category)]</column>
+            <column>[federated.073emef0emwyas15nvggo0n1bbru].[Action (Category (Kafco Category Kpi.Csv),Category)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.073emef0emwyas15nvggo0n1bbru].[sum:pct_slow_moving:qk]' value='n#,##0;-#,##0' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.073emef0emwyas15nvggo0n1bbru].[sum:pct_slow_moving:qk]' num-steps='5' palette='blue_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='title'>
+            <format attr='background-color' value='#f2f9f9' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.073emef0emwyas15nvggo0n1bbru].[none:category:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.073emef0emwyas15nvggo0n1bbru].[sum:pct_slow_moving:qk]</rows>
+        <cols>[federated.073emef0emwyas15nvggo0n1bbru].[none:category (kafco_category_kpi.csv):nk]</cols>
+      </table>
+      <simple-id uuid='{B288672B-9265-4485-B8B6-0C2644C6837E}' />
+    </worksheet>
+    <worksheet name='Turnover by Category'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='kafco_item_detail+' name='federated.073emef0emwyas15nvggo0n1bbru' />
+          </datasources>
+          <datasource-dependencies datasource='federated.073emef0emwyas15nvggo0n1bbru'>
+            <column-instance column='[turnover_rate_per_year]' derivation='Avg' name='[avg:turnover_rate_per_year:qk]' pivot='key' type='quantitative' />
+            <column caption='Category (Kafco Category Kpi.Csv)' datatype='string' name='[category (kafco_category_kpi.csv)]' role='dimension' type='nominal' />
+            <column caption='Category' datatype='string' name='[category]' role='dimension' type='nominal' />
+            <column-instance column='[category (kafco_category_kpi.csv)]' derivation='None' name='[none:category (kafco_category_kpi.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[category]' derivation='None' name='[none:category:nk]' pivot='key' type='nominal' />
+            <column caption='Turnover Rate (per Year)' datatype='real' name='[turnover_rate_per_year]' role='dimension' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.073emef0emwyas15nvggo0n1bbru].[none:category (kafco_category_kpi.csv):nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:category (kafco_category_kpi.csv):nk]' />
+              <groupfilter function='member' level='[none:category (kafco_category_kpi.csv):nk]' member='&quot;Instrumentation&quot;' />
+            </groupfilter>
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.073emef0emwyas15nvggo0n1bbru].[none:category:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.073emef0emwyas15nvggo0n1bbru].[avg:turnover_rate_per_year:qk]' shelf='columns' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.073emef0emwyas15nvggo0n1bbru].[none:category (kafco_category_kpi.csv):nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='title'>
+            <format attr='background-color' value='#f2f9f9' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.073emef0emwyas15nvggo0n1bbru].[none:category (kafco_category_kpi.csv):nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.4942541122436523' />
+                <format attr='mark-color' value='#4e79a7' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.073emef0emwyas15nvggo0n1bbru].[avg:turnover_rate_per_year:qk]</rows>
+        <cols>[federated.073emef0emwyas15nvggo0n1bbru].[none:category:nk]</cols>
+      </table>
+      <simple-id uuid='{00567055-AD9B-428E-B8AD-D656870D3346}' />
+    </worksheet>
+    <worksheet name='Velocity Breakdown'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='kafco_item_detail+' name='federated.073emef0emwyas15nvggo0n1bbru' />
+          </datasources>
+          <datasource-dependencies datasource='federated.073emef0emwyas15nvggo0n1bbru'>
+            <column-instance column='[velocity_class]' derivation='Attribute' name='[attr:velocity_class:nk]' pivot='key' type='nominal' />
+            <column caption='Category (Kafco Category Kpi.Csv)' datatype='string' name='[category (kafco_category_kpi.csv)]' role='dimension' type='nominal' />
+            <column caption='Category' datatype='string' name='[category]' role='dimension' type='nominal' />
+            <column-instance column='[item_code]' derivation='Count' name='[cnt:item_code:qk]' pivot='key' type='quantitative' />
+            <column caption='Item Code' datatype='string' name='[item_code]' role='dimension' type='nominal' />
+            <column-instance column='[velocity_class]' derivation='None' name='[none:velocity_class:nk]' pivot='key' type='nominal' />
+            <column caption='Velocity Class' datatype='string' name='[velocity_class]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.073emef0emwyas15nvggo0n1bbru].[Action (Category (Kafco Category Kpi.Csv),Category)]'>
+            <groupfilter function='union' user:ui-action-filter='[Action1_E67D2A80AAD94B47AEA025F455AA1A18]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='member' level='[category (kafco_category_kpi.csv)]' member='&quot;Chemical&quot;' />
+                <groupfilter function='member' level='[category]' member='&quot;Chemical&quot;' />
+              </groupfilter>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='member' level='[category (kafco_category_kpi.csv)]' member='&quot;Civil&quot;' />
+                <groupfilter function='member' level='[category]' member='&quot;Civil&quot;' />
+              </groupfilter>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='member' level='[category (kafco_category_kpi.csv)]' member='&quot;Electrical&quot;' />
+                <groupfilter function='member' level='[category]' member='&quot;Electrical&quot;' />
+              </groupfilter>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='member' level='[category (kafco_category_kpi.csv)]' member='&quot;HVAC&quot;' />
+                <groupfilter function='member' level='[category]' member='&quot;HVAC&quot;' />
+              </groupfilter>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='member' level='[category (kafco_category_kpi.csv)]' member='&quot;Lubrication&quot;' />
+                <groupfilter function='member' level='[category]' member='&quot;Lubrication&quot;' />
+              </groupfilter>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='member' level='[category (kafco_category_kpi.csv)]' member='&quot;Mechanical&quot;' />
+                <groupfilter function='member' level='[category]' member='&quot;Mechanical&quot;' />
+              </groupfilter>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='member' level='[category (kafco_category_kpi.csv)]' member='&quot;Piping&quot;' />
+                <groupfilter function='member' level='[category]' member='&quot;Piping&quot;' />
+              </groupfilter>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='member' level='[category (kafco_category_kpi.csv)]' member='&quot;Safety&quot;' />
+                <groupfilter function='member' level='[category]' member='&quot;Safety&quot;' />
+              </groupfilter>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='member' level='[category (kafco_category_kpi.csv)]' member='&quot;Utility&quot;' />
+                <groupfilter function='member' level='[category]' member='&quot;Utility&quot;' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.073emef0emwyas15nvggo0n1bbru].[Action (Category)]'>
+            <groupfilter function='level-members' level='[category]' user:ui-action-filter='[Action1_E67D2A80AAD94B47AEA025F455AA1A18]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.073emef0emwyas15nvggo0n1bbru].[Action (Category)]</column>
+            <column>[federated.073emef0emwyas15nvggo0n1bbru].[Action (Category (Kafco Category Kpi.Csv),Category)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='title'>
+            <format attr='background-color' value='#f2f9f9' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.073emef0emwyas15nvggo0n1bbru].[attr:velocity_class:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+                <format attr='size' value='1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.073emef0emwyas15nvggo0n1bbru].[cnt:item_code:qk]</rows>
+        <cols>[federated.073emef0emwyas15nvggo0n1bbru].[none:velocity_class:nk]</cols>
+      </table>
+      <simple-id uuid='{C8D19CEA-A7D1-43BA-99D4-5C163B71B40B}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='KAFCO Inventory Dashboard'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000' fontname='Benton Sans Book'>KAFCO Inventory Cycle &amp; Reorder Analytics</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style />
+      <size maxheight='800' maxwidth='1200' minheight='800' minwidth='1200' sizing-mode='fixed' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='48' param='horz' type-v2='layout-flow' w='98666' x='667' y='1000'>
+            <zone h='98000' id='45' param='horz' type-v2='layout-flow' w='98666' x='667' y='1000'>
+              <zone h='98000' id='43' type-v2='layout-basic' w='98666' x='667' y='1000'>
+                <zone h='91126' id='33' param='vert' type-v2='layout-flow' w='98666' x='667' y='7874'>
+                  <zone h='91126' id='31' param='vert' type-v2='layout-flow' w='98666' x='667' y='7874'>
+                    <zone h='91126' id='29' type-v2='layout-basic' w='98666' x='667' y='7874'>
+                      <zone h='83692' id='26' param='horz' type-v2='layout-flow' w='98666' x='667' y='15308'>
+                        <zone h='83692' id='18' param='vert' type-v2='layout-flow' w='98666' x='667' y='15308'>
+                          <zone h='83692' id='9' param='horz' type-v2='layout-flow' w='98666' x='667' y='15308'>
+                            <zone h='83692' id='7' type-v2='layout-basic' w='98666' x='667' y='15308'>
+                              <zone h='41846' id='5' name='Turnover by Category' w='48333' x='667' y='15308'>
+                                <zone-style>
+                                  <format attr='border-color' value='#000000' />
+                                  <format attr='border-style' value='solid' />
+                                  <format attr='border-width' value='1' />
+                                  <_.fcp.DashboardRoundedCorners.true...format attr='corner-radius' value='8' />
+                                  <format attr='margin' value='4' />
+                                  <format attr='background-color' value='#dfe7e8' />
+                                </zone-style>
+                              </zone>
+                              <zone h='41846' id='22' name='Slow Moving Risk' w='48333' x='667' y='57154'>
+                                <zone-style>
+                                  <format attr='border-color' value='#000000' />
+                                  <format attr='border-style' value='solid' />
+                                  <format attr='border-width' value='1' />
+                                  <_.fcp.DashboardRoundedCorners.true...format attr='corner-radius' value='8' />
+                                  <format attr='margin' value='4' />
+                                  <format attr='background-color' value='#dfe7e8' />
+                                </zone-style>
+                              </zone>
+                              <zone h='41849' id='24' name='Reorder Timeline' w='50333' x='49000' y='57151'>
+                                <zone-style>
+                                  <format attr='border-color' value='#000000' />
+                                  <format attr='border-style' value='solid' />
+                                  <format attr='border-width' value='1' />
+                                  <_.fcp.DashboardRoundedCorners.true...format attr='corner-radius' value='8' />
+                                  <format attr='margin' value='4' />
+                                  <format attr='background-color' value='#dfe7e8' />
+                                </zone-style>
+                              </zone>
+                              <zone h='41843' id='27' name='Reorder Timeline' pane-specification-id='0' param='[federated.073emef0emwyas15nvggo0n1bbru].[none:category (kafco_category_kpi.csv):nk]' type-v2='color' w='17000' x='82333' y='15308'>
+                                <zone-style>
+                                  <format attr='border-color' value='#000000' />
+                                  <format attr='border-style' value='solid' />
+                                  <format attr='border-width' value='1' />
+                                  <_.fcp.DashboardRoundedCorners.true...format attr='corner-radius' value='8' />
+                                  <format attr='margin' value='4' />
+                                  <format attr='background-color' value='#e9f0f1' />
+                                </zone-style>
+                              </zone>
+                              <zone h='41843' id='46' name='Velocity Breakdown' w='33333' x='49000' y='15308'>
+                                <zone-style>
+                                  <format attr='border-color' value='#000000' />
+                                  <format attr='border-style' value='solid' />
+                                  <format attr='border-width' value='1' />
+                                  <_.fcp.DashboardRoundedCorners.true...format attr='corner-radius' value='8' />
+                                  <format attr='margin' value='4' />
+                                  <format attr='background-color' value='#dfe7e8' />
+                                </zone-style>
+                              </zone>
+                            </zone>
+                          </zone>
+                        </zone>
+                      </zone>
+                      <zone forceUpdate='true' h='7434' id='28' type-v2='text' w='98666' x='667' y='7874'>
+                        <formatted-text>
+                          <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'>Mechanical &amp; Piping require POs </run>
+                          <run bold='true' fontcolor='#f28e2b' fontname='Benton Sans Book' fontsize='11'>6+ months</run>
+                          <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'> before shutdown — </run>
+                          <run bold='true' fontcolor='#f28e2b' fontname='Benton Sans Book' fontsize='11'>37.5%</run>
+                          <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'> of Mechanical parts are Slow-Moving, indicating overstock risk</run>
+                        </formatted-text>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='solid' />
+                          <format attr='border-width' value='1' />
+                          <_.fcp.DashboardRoundedCorners.true...format attr='corner-radius' value='8' />
+                          <format attr='margin' value='4' />
+                          <format attr='background-color' value='#e9edf5' />
+                        </zone-style>
+                      </zone>
+                    </zone>
+                  </zone>
+                </zone>
+                <zone forceUpdate='true' h='6874' id='39' type-v2='text' w='98666' x='667' y='1000'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='18'>KAFCO Inventory Cycle &amp; Reorder Analytics</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <_.fcp.DashboardRoundedCorners.true...format attr='corner-radius' value='8' />
+                    <format attr='margin' value='4' />
+                    <format attr='background-color' value='#e2e6f0' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <layout-options>
+            <title>
+              <formatted-text>
+                <run fontcolor='#000000' fontname='Benton Sans Book'>KAFCO Inventory Cycle &amp; Reorder Analytics</run>
+              </formatted-text>
+            </title>
+          </layout-options>
+          <size maxheight='1400' minheight='1400' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='54' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='53' param='vert' type-v2='layout-flow' w='98666' x='667' y='1000'>
+                <zone forceUpdate='true' h='6874' id='39' type-v2='text' w='98666' x='667' y='1000'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#000000' fontname='Benton Sans Book' fontsize='18'>KAFCO Inventory Cycle &amp; Reorder Analytics</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <_.fcp.DashboardRoundedCorners.true...format attr='corner-radius' value='8' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#e2e6f0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='7434' id='28' type-v2='text' w='98666' x='667' y='7874'>
+                  <formatted-text>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'>Mechanical &amp; Piping require POs </run>
+                    <run bold='true' fontcolor='#f28e2b' fontname='Benton Sans Book' fontsize='11'>6+ months</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'> before shutdown — </run>
+                    <run bold='true' fontcolor='#f28e2b' fontname='Benton Sans Book' fontsize='11'>37.5%</run>
+                    <run fontcolor='#000000' fontname='Benton Sans Book' fontsize='11'> of Mechanical parts are Slow-Moving, indicating overstock risk</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <_.fcp.DashboardRoundedCorners.true...format attr='corner-radius' value='8' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#e9edf5' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='41846' id='5' is-fixed='true' name='Turnover by Category' w='48333' x='667' y='15308'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <_.fcp.DashboardRoundedCorners.true...format attr='corner-radius' value='8' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#dfe7e8' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='41843' id='46' is-fixed='true' name='Velocity Breakdown' w='33333' x='49000' y='15308'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <_.fcp.DashboardRoundedCorners.true...format attr='corner-radius' value='8' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#dfe7e8' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='41849' id='24' is-fixed='true' name='Reorder Timeline' w='50333' x='49000' y='57151'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <_.fcp.DashboardRoundedCorners.true...format attr='corner-radius' value='8' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#dfe7e8' />
+                  </zone-style>
+                </zone>
+                <zone h='41843' id='27' name='Reorder Timeline' pane-specification-id='0' param='[federated.073emef0emwyas15nvggo0n1bbru].[none:category (kafco_category_kpi.csv):nk]' type-v2='color' w='17000' x='82333' y='15308'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <_.fcp.DashboardRoundedCorners.true...format attr='corner-radius' value='8' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#e9f0f1' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='41846' id='22' is-fixed='true' name='Slow Moving Risk' w='48333' x='667' y='57154'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <_.fcp.DashboardRoundedCorners.true...format attr='corner-radius' value='8' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#dfe7e8' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{40519678-08AB-4248-86B6-F29EC70DB295}' />
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='worksheet' name='Turnover by Category'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.073emef0emwyas15nvggo0n1bbru].[none:category (kafco_category_kpi.csv):nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{8037596A-42E2-4F3E-A586-EFD38C0F17D3}' />
+    </window>
+    <window class='worksheet' name='Velocity Breakdown'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.073emef0emwyas15nvggo0n1bbru].[attr:velocity_class:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{4FFCF6B0-19A9-42B2-8F24-8AE242820012}' />
+    </window>
+    <window class='worksheet' name='Slow Moving Risk'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.073emef0emwyas15nvggo0n1bbru].[none:category:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.073emef0emwyas15nvggo0n1bbru].[none:category:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{330CC530-6D00-4A7D-A0A7-8D4EDB1B230C}' />
+    </window>
+    <window class='worksheet' name='Reorder Timeline'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.073emef0emwyas15nvggo0n1bbru].[none:category (kafco_category_kpi.csv):nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.073emef0emwyas15nvggo0n1bbru].[none:target_shutdown_date:qk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{5C77282F-5528-4F80-AE38-50FDFD6A9E67}' />
+    </window>
+    <window class='dashboard' maximized='true' name='KAFCO Inventory Dashboard'>
+      <viewpoints>
+        <viewpoint name='Reorder Timeline'>
+          <highlight field='[federated.073emef0emwyas15nvggo0n1bbru].[none:category (kafco_category_kpi.csv):nk]'>
+            <bucket-selection />
+          </highlight>
+        </viewpoint>
+        <viewpoint name='Slow Moving Risk'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Turnover by Category'>
+          <zoom type='entire-view' />
+          <selection-collection>
+            <tuple-selection>
+              <tuple-reference>
+                <tuple-descriptor>
+                  <pane-descriptor>
+                    <x-fields>
+                      <field>[federated.073emef0emwyas15nvggo0n1bbru].[none:category:nk]</field>
+                    </x-fields>
+                    <y-fields>
+                      <field>[federated.073emef0emwyas15nvggo0n1bbru].[avg:turnover_rate_per_year:qk]</field>
+                    </y-fields>
+                  </pane-descriptor>
+                  <columns>
+                    <field>[federated.073emef0emwyas15nvggo0n1bbru].[avg:turnover_rate_per_year:qk]</field>
+                    <field>[federated.073emef0emwyas15nvggo0n1bbru].[none:category (kafco_category_kpi.csv):nk]</field>
+                    <field>[federated.073emef0emwyas15nvggo0n1bbru].[none:category:nk]</field>
+                  </columns>
+                </tuple-descriptor>
+                <tuple>
+                  <value>0.35744999999999993</value>
+                  <value>&quot;Utility&quot;</value>
+                  <value>&quot;Utility&quot;</value>
+                </tuple>
+              </tuple-reference>
+              <tuple-reference>
+                <tuple-descriptor>
+                  <pane-descriptor>
+                    <x-fields>
+                      <field>[federated.073emef0emwyas15nvggo0n1bbru].[none:category:nk]</field>
+                    </x-fields>
+                    <y-fields>
+                      <field>[federated.073emef0emwyas15nvggo0n1bbru].[avg:turnover_rate_per_year:qk]</field>
+                    </y-fields>
+                  </pane-descriptor>
+                  <columns>
+                    <field>[federated.073emef0emwyas15nvggo0n1bbru].[avg:turnover_rate_per_year:qk]</field>
+                    <field>[federated.073emef0emwyas15nvggo0n1bbru].[none:category (kafco_category_kpi.csv):nk]</field>
+                    <field>[federated.073emef0emwyas15nvggo0n1bbru].[none:category:nk]</field>
+                  </columns>
+                </tuple-descriptor>
+                <tuple>
+                  <value>0.48594999999999999</value>
+                  <value>&quot;Safety&quot;</value>
+                  <value>&quot;Safety&quot;</value>
+                </tuple>
+              </tuple-reference>
+              <tuple-reference>
+                <tuple-descriptor>
+                  <pane-descriptor>
+                    <x-fields>
+                      <field>[federated.073emef0emwyas15nvggo0n1bbru].[none:category:nk]</field>
+                    </x-fields>
+                    <y-fields>
+                      <field>[federated.073emef0emwyas15nvggo0n1bbru].[avg:turnover_rate_per_year:qk]</field>
+                    </y-fields>
+                  </pane-descriptor>
+                  <columns>
+                    <field>[federated.073emef0emwyas15nvggo0n1bbru].[avg:turnover_rate_per_year:qk]</field>
+                    <field>[federated.073emef0emwyas15nvggo0n1bbru].[none:category (kafco_category_kpi.csv):nk]</field>
+                    <field>[federated.073emef0emwyas15nvggo0n1bbru].[none:category:nk]</field>
+                  </columns>
+                </tuple-descriptor>
+                <tuple>
+                  <value>0.12925000000000003</value>
+                  <value>&quot;Piping&quot;</value>
+                  <value>&quot;Piping&quot;</value>
+                </tuple>
+              </tuple-reference>
+              <tuple-reference>
+                <tuple-descriptor>
+                  <pane-descriptor>
+                    <x-fields>
+                      <field>[federated.073emef0emwyas15nvggo0n1bbru].[none:category:nk]</field>
+                    </x-fields>
+                    <y-fields>
+                      <field>[federated.073emef0emwyas15nvggo0n1bbru].[avg:turnover_rate_per_year:qk]</field>
+                    </y-fields>
+                  </pane-descriptor>
+                  <columns>
+                    <field>[federated.073emef0emwyas15nvggo0n1bbru].[avg:turnover_rate_per_year:qk]</field>
+                    <field>[federated.073emef0emwyas15nvggo0n1bbru].[none:category (kafco_category_kpi.csv):nk]</field>
+                    <field>[federated.073emef0emwyas15nvggo0n1bbru].[none:category:nk]</field>
+                  </columns>
+                </tuple-descriptor>
+                <tuple>
+                  <value>0.29020833333333335</value>
+                  <value>&quot;Mechanical&quot;</value>
+                  <value>&quot;Mechanical&quot;</value>
+                </tuple>
+              </tuple-reference>
+              <tuple-reference>
+                <tuple-descriptor>
+                  <pane-descriptor>
+                    <x-fields>
+                      <field>[federated.073emef0emwyas15nvggo0n1bbru].[none:category:nk]</field>
+                    </x-fields>
+                    <y-fields>
+                      <field>[federated.073emef0emwyas15nvggo0n1bbru].[avg:turnover_rate_per_year:qk]</field>
+                    </y-fields>
+                  </pane-descriptor>
+                  <columns>
+                    <field>[federated.073emef0emwyas15nvggo0n1bbru].[avg:turnover_rate_per_year:qk]</field>
+                    <field>[federated.073emef0emwyas15nvggo0n1bbru].[none:category (kafco_category_kpi.csv):nk]</field>
+                    <field>[federated.073emef0emwyas15nvggo0n1bbru].[none:category:nk]</field>
+                  </columns>
+                </tuple-descriptor>
+                <tuple>
+                  <value>0.53729999999999989</value>
+                  <value>&quot;Lubrication&quot;</value>
+                  <value>&quot;Lubrication&quot;</value>
+                </tuple>
+              </tuple-reference>
+              <tuple-reference>
+                <tuple-descriptor>
+                  <pane-descriptor>
+                    <x-fields>
+                      <field>[federated.073emef0emwyas15nvggo0n1bbru].[none:category:nk]</field>
+                    </x-fields>
+                    <y-fields>
+                      <field>[federated.073emef0emwyas15nvggo0n1bbru].[avg:turnover_rate_per_year:qk]</field>
+                    </y-fields>
+                  </pane-descriptor>
+                  <columns>
+                    <field>[federated.073emef0emwyas15nvggo0n1bbru].[avg:turnover_rate_per_year:qk]</field>
+                    <field>[federated.073emef0emwyas15nvggo0n1bbru].[none:category (kafco_category_kpi.csv):nk]</field>
+                    <field>[federated.073emef0emwyas15nvggo0n1bbru].[none:category:nk]</field>
+                  </columns>
+                </tuple-descriptor>
+                <tuple>
+                  <value>0.70219999999999994</value>
+                  <value>&quot;HVAC&quot;</value>
+                  <value>&quot;HVAC&quot;</value>
+                </tuple>
+              </tuple-reference>
+              <tuple-reference>
+                <tuple-descriptor>
+                  <pane-descriptor>
+                    <x-fields>
+                      <field>[federated.073emef0emwyas15nvggo0n1bbru].[none:category:nk]</field>
+                    </x-fields>
+                    <y-fields>
+                      <field>[federated.073emef0emwyas15nvggo0n1bbru].[avg:turnover_rate_per_year:qk]</field>
+                    </y-fields>
+                  </pane-descriptor>
+                  <columns>
+                    <field>[federated.073emef0emwyas15nvggo0n1bbru].[avg:turnover_rate_per_year:qk]</field>
+                    <field>[federated.073emef0emwyas15nvggo0n1bbru].[none:category (kafco_category_kpi.csv):nk]</field>
+                    <field>[federated.073emef0emwyas15nvggo0n1bbru].[none:category:nk]</field>
+                  </columns>
+                </tuple-descriptor>
+                <tuple>
+                  <value>0.52163749999999975</value>
+                  <value>&quot;Electrical&quot;</value>
+                  <value>&quot;Electrical&quot;</value>
+                </tuple>
+              </tuple-reference>
+              <tuple-reference>
+                <tuple-descriptor>
+                  <pane-descriptor>
+                    <x-fields>
+                      <field>[federated.073emef0emwyas15nvggo0n1bbru].[none:category:nk]</field>
+                    </x-fields>
+                    <y-fields>
+                      <field>[federated.073emef0emwyas15nvggo0n1bbru].[avg:turnover_rate_per_year:qk]</field>
+                    </y-fields>
+                  </pane-descriptor>
+                  <columns>
+                    <field>[federated.073emef0emwyas15nvggo0n1bbru].[avg:turnover_rate_per_year:qk]</field>
+                    <field>[federated.073emef0emwyas15nvggo0n1bbru].[none:category (kafco_category_kpi.csv):nk]</field>
+                    <field>[federated.073emef0emwyas15nvggo0n1bbru].[none:category:nk]</field>
+                  </columns>
+                </tuple-descriptor>
+                <tuple>
+                  <value>0.052600000000000001</value>
+                  <value>&quot;Civil&quot;</value>
+                  <value>&quot;Civil&quot;</value>
+                </tuple>
+              </tuple-reference>
+              <tuple-reference>
+                <tuple-descriptor>
+                  <pane-descriptor>
+                    <x-fields>
+                      <field>[federated.073emef0emwyas15nvggo0n1bbru].[none:category:nk]</field>
+                    </x-fields>
+                    <y-fields>
+                      <field>[federated.073emef0emwyas15nvggo0n1bbru].[avg:turnover_rate_per_year:qk]</field>
+                    </y-fields>
+                  </pane-descriptor>
+                  <columns>
+                    <field>[federated.073emef0emwyas15nvggo0n1bbru].[avg:turnover_rate_per_year:qk]</field>
+                    <field>[federated.073emef0emwyas15nvggo0n1bbru].[none:category (kafco_category_kpi.csv):nk]</field>
+                    <field>[federated.073emef0emwyas15nvggo0n1bbru].[none:category:nk]</field>
+                  </columns>
+                </tuple-descriptor>
+                <tuple>
+                  <value>0.28525000000000006</value>
+                  <value>&quot;Chemical&quot;</value>
+                  <value>&quot;Chemical&quot;</value>
+                </tuple>
+              </tuple-reference>
+            </tuple-selection>
+          </selection-collection>
+          <highlight field='[federated.073emef0emwyas15nvggo0n1bbru].[none:category (kafco_category_kpi.csv):nk]'>
+            <bucket-selection />
+          </highlight>
+        </viewpoint>
+        <viewpoint name='Velocity Breakdown'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{7EE7E193-BC3E-4975-9F07-84315A179EF5}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='KAFCO Inventory Dashboard' width='192'>
+      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
+      AAAAAElFTkSuQmCC
+    </thumbnail>
+    <thumbnail height='192' name='Reorder Timeline' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Slow Moving Risk' width='192'>
+      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
+      cQDkHEBY2v8DDno7G1p/gugAAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Turnover by Category' width='192'>
+      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
+      7f8ByWKc9uUWxS8AAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Velocity Breakdown' width='192'>
+      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
+      qUkAhKlJAISpSQCEqUkAhKlJAISpSQCEqUkAhKlJAISpSQCEqUkAhKlJAISpSQCEqUkAhKlJ
+      AISpSQCEqUkAhKlJAISpSQCEqUkAhKlJAISpxf7huIaBHlUZ6Gnhw6pGZi+qpCj94zIXRpTe
+      C1W8/vYhfFEvi9ZtZm15NjYFDF3jYvV+9hw+w4A9jXu2P0hZdjxWeUS0mISYB0ALdXOu6igf
+      nu0gaIHE0pGiOYOXP+K1dy5x1+NfocDSzt6X3+JQ4uOsz4sj2PwOu0/buO8LT5GhNfDKy68S
+      3f4IizOkRoyYuJgPgYyogXPWAj618wFKx2y8Ki1nWklfsZIirxVLQg5rNxRy8XgDYQapP9bM
+      3E2VZMVbsCYWs3xxEm21rUxdhS9xJ4r5EcDuSaPYA1qw56o5Qbr6XWTPHyl2Zk/PJ9lfTx9p
+      tPakUZ4+0v345FnY27sZpBCbMbb6oGEYKIqCYUykKuHUVC680vLE+jCdGFPW56n8JCba55gH
+      YHw6UZuDOOvIQUqxuHHZNXSiaI443KOOX1ZrHA5rPzpcUxL1SpnUidD0qTuG6FGdUGhqKhnr
+      2tT0O6KqaFPUZ2MKy6RO9HOexgFQsKphgtGRcwJDDxIM27BgwRYOEtQh9eMQRKMhwqqJy6Ta
+      7FMy/HPYHVImNTbcpCT0c8k3ODwl2tFER2IGHhLJSGyjsWOkTGrA10ooPpm4WHRVzFgxPgIY
+      RAJ9+Hp6GQz20e3vJ9LWwkXiSUrPpnjJfI6/eYzTictJUfqoPnCBRRvvxomFhXcv5md79zJr
+      fTmeqI8TNQFK7yuM9QqJGSbmAQj1dVBfU0efamCLzyDcUceZXhelCTl4UsvYtjrAe6fPcNmi
+      4lq4maWzhqpBWrNWcG/Zfs6eqcGqhcit3E5JikUqRYpJiXEALCRmzaUya+448xWSilawNV9D
+      x4LNOrKBK4qF2Ys2kBvV0LFisyqy8YtJm/YjBkVRsNrsWCc5T4iJmMYnwUJMPQmAMDUJgDA1
+      CYAwNQmAMDUJgDA1CYAwNQmAMDUJgDA1CYAwNQmAMDUJgDA1CYAwNQmAMDUJgDA1CYAwNQmA
+      MDUJgDA1CYAwNQmAMDUJgDA1CYAwNQmAMDUJgDA1CYAwNQmAMDUJgDC1afxsUAPDiHCx6gBv
+      HzpLxJXJyo2bWJafgqKAYei01xzk7Xeq6LNnsvlTDzEv3YkiT8gVkzB9jwCGyqUP9vFedyaf
+      /fOnePKRZbTu+S0fdg2VPhpseYddx1Q2ff4pvvLpJVS/9itO+iI3aVSIsaZvANQeajqcrFxY
+      RJxVwZE0h/Vrkzj1QTMqYeqONjJ3y3py4i1Yk0pYudTLpXOtaLHut5hRpm8AdB1N0xhdR809
+      uwBXUzO9+GntTqMg0z48LyElC3u/j6kp5ybuVNP3HMCZTkWuyoFDx9AWFuAgSn9XA72qkyhR
+      VLub+DFVIt3DVSJ1Xb9ulcjR08YzlUXyolGdYDA4JW1PWZXISARtqvo8hVUiJ/o5T98AKDZy
+      l25kveM4x6tPYNjjycxy4XbHYceCNRy6pkpkRJMqkZ80h+POrhI5fQMAoDjJqbiLnIqhX3tP
+      v0JtYSlevGR42rjQqZOXOZSAYHcbwbh5uG7QnBBXm9YBiPR30x3UcNhtqAMtHDlhZd3OPGwo
+      VFTO5/l9B8m9dwEJuo/qM73M2VKA/ebNCjFsWgcg3NPCR1XN2BNchINRCtffTeHH5eHteWvZ
+      UPw2Jz/4ALsaJG3NA5Sl26RQnpiUaR0Az+yFbM0pQ4vqWKw2rNaRs15FsVCwbAt5moahWMdU
+      kBRioqZ1AAAsVhuOccpAKooFm91xezsk7ijT9zqAELeBBECYmgRAmJoEQJiaBECYmgRAmJoE
+      QJiaBECYmgRAmJoEQJja/wNLelX3l3QiDAAAAABJRU5ErkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
