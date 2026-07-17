@@ -1,0 +1,19 @@
+﻿Category,"Required Lead Time (Avg + Buffer, days)",Flat Assumption (days before shutdown),Gap vs Required (days),Status,Total Items,Items at Risk (if LATE)
+Mechanical,269.8,90,+179.8,LATE (stockout risk),120,120
+Civil,212.7,90,+122.7,LATE (stockout risk),15,15
+Piping,190.8,90,+100.8,LATE (stockout risk),40,40
+Instrumentation,178.5,90,+88.5,LATE (stockout risk),50,50
+HVAC,155.9,90,+65.9,LATE (stockout risk),15,15
+Electrical,151.8,90,+61.8,LATE (stockout risk),80,80
+Chemical,123.9,90,+33.9,LATE (stockout risk),20,20
+Utility,120,90,+30.0,LATE (stockout risk),20,20
+Safety,93.6,90,+3.6,LATE (stockout risk),20,20
+Lubrication,62.1,90,-27.9,EARLY (excess holding),20,0
+,,,,,,
+SUMMARY,,,,,,
+Total items in catalogue,400,,,,,
+Items at stockout risk under flat 90-day rule,380,,,,,
+% of catalogue at risk,95.0%,,,,,
+Categories at risk (of 10),9,,,,,
+Max days late (worst category),179.8,,,,,
+Item-weighted avg days late (at-risk items only),103.0,,,,,
